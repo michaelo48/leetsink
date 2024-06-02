@@ -4,15 +4,12 @@ class Solution(object):
         start = 0
         s = list(s)
         end = len(s)-1
-        
-        
+     
         while start < end:
-            if(s[start] not in vowel):
-                
+            if(s[start] not in vowel):                
                 start += 1
                 continue
             if(s[end] not in vowel):
-                
                 end -= 1
                 continue
             s[start], s[end] = s[end], s[start]
