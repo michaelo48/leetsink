@@ -1,28 +1,18 @@
 class Solution(object):
     def mergeAlternately(self, word1, word2):
-        word1_len = len(word1)
-        word2_len = len(word2)
-        Common_Len = 0
-        merged = ""
-
-        if(word1_len> word2_len):
-            Common_Len = word2_len
+        combo = ""  
+        if len(word1) > len(word2):
+            LoopLength = word2
+            leftover = word1
         else:
-            Common_Len = word1_len
-
-        for x in range(Common_Len):
-            merged = merged + word1[x] + word2[x]
-        if Common_Len == word1_len:
-            return (merged+word2[Common_Len:])
-        else:
-            return merged + word1[Common_Len:]
-     
-        
+            LoopLength = word1
+            leftover = word2
+        for x in range(0, len(LoopLength)):
+            combo = combo + word1[x] + word2[x]
+        if len(word1) != len(word2):
+            combo = combo + leftover[-(len(leftover)-len(LoopLength)):]
+        return combo
 
 
-        """
-        :type word1: str
-        :type word2: str
-        :rtype: str
-        """
+            
         
