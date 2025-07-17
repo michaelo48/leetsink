@@ -5,7 +5,7 @@ class Solution:
         start = 0
         difference = 0
         for x in range(len(gas)):
-            difference = difference + (gas[x] - cost[x])
+            difference += (gas[x] - cost[x])
 
             if difference < 0:
                 difference = 0
