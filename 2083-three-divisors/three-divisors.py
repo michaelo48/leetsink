@@ -1,9 +1,3 @@
 class Solution:
     def isThree(self, n: int) -> bool:
-        count = 1
-        for i in range(1, n):
-            if n % i == 0:
-                count += 1
-        if count == 3:
-            return True
-        return False
+       return sum(2 if i != n // i else 1 for i in range(1, int(n ** 0.5) + 1) if n % i == 0) == 3
